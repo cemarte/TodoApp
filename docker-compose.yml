@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  todoapp:
+    image: todoapp
+    build:
+      context: .
+      dockerfile: src/server/Todo.App/Dockerfile
