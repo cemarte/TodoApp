@@ -24,7 +24,10 @@ namespace TodoApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TodoDbContext>(options => options.UseInMemoryDatabase("todo"));
+            services.AddDbContext<TodoDbContext>(
+                //options => options.UseInMemoryDatabase("todo")
+                options => options.UseSqlite("Data Source=todo.db")
+                );
 
             services.AddScoped<IRepository<TodoTask>, TodoRepository>();
             //services.AddScoped<ITodoService, TodoService>();
@@ -54,18 +57,33 @@ namespace TodoApp
             app.UseMvc();
         }
 
+        public void ConfigureDevelopment(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            this.Configure(app, env);
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+
+                var context = serviceScope.ServiceProvider.GetRequiredService<TodoDbContext>();
+                context.Database.EnsureCreated();
+            }
+
+        }
+
         public void ConfigureTesting(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             this.Configure(app, env);
+            var context = app.ApplicationServices.GetService<TodoDbContext>();
+            context.Database.EnsureCreated();
             DbSeed.PopulateTestData(app.ApplicationServices.GetService<TodoDbContext>());
         }
     }
 
 
-    public static class DbSeed {
+    public static class DbSeed
+    {
         public static void PopulateTestData(TodoDbContext dbContext)
         {
-            dbContext.TodoTasks.Add(new Todo.Core.Entities.TodoTask() { Id = Guid.NewGuid(), Assignee="Celso", Text="Finish Todo API", CreatedAt= DateTimeOffset.Now });
+            dbContext.TodoTasks.Add(new Todo.Core.Entities.TodoTask() { Id = Guid.NewGuid(), Assignee = "Celso", Text = "Finish Todo API", CreatedAt = DateTimeOffset.Now });
             dbContext.TodoTasks.Add(new Todo.Core.Entities.TodoTask() { Id = Guid.NewGuid(), Assignee = "Celso", Text = "Finish Todo Backend", CreatedAt = DateTimeOffset.Now });
             dbContext.TodoTasks.Add(new Todo.Core.Entities.TodoTask() { Id = Guid.NewGuid(), Assignee = "Celso", Text = "Finish Todo Frontend", CreatedAt = DateTimeOffset.Now });
 
