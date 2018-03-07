@@ -7,7 +7,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using Todo.Core.Entities;
 using Todo.Core.Interfaces;
-using Todo.Core.Services;
 using Todo.Infrastructure;
 
 namespace TodoApp
@@ -73,6 +72,7 @@ namespace TodoApp
         {
             this.Configure(app, env);
             var context = app.ApplicationServices.GetService<TodoDbContext>();
+            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
             DbSeed.PopulateTestData(app.ApplicationServices.GetService<TodoDbContext>());
         }
