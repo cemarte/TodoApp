@@ -32,7 +32,7 @@ namespace Todo.Tests.Integration
         private HttpClient GetClient()
         {
             var startupAssembly = typeof(Startup).GetTypeInfo().Assembly;
-            var contentRoot = GetProjectPath("src\\server", startupAssembly);
+            var contentRoot = GetProjectPath("src/server", startupAssembly);
             var builder = new WebHostBuilder()
                 .UseContentRoot(contentRoot)
                 .ConfigureServices(InitializeServices)

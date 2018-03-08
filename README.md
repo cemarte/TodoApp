@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/cemarte/TodoApp.svg?branch=master)](https://travis-ci.org/cemarte/TodoApp)
+
 # Todo App
 
 Simple todo app using aspnet core web api on the backend with ef core in-memory database and create-react-app with typescript and redux on the frontend.

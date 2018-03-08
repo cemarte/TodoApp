@@ -3,4 +3,4 @@ mono: none
 dotnet: 2.1.4
 script:
  - dotnet restore ./TodoApp.sln
- - dotnet test ./TodoApp.sln
+ - dotnet test ./tests/Todo.Tests/Todo.Tests.csproj
