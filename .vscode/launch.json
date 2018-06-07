@@ -40,7 +40,9 @@
                 }
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5001",
+                "SQLCONNSTR_TodoDb": "Server=localhost;Database=todo;Port=5432;User Id=workshop;Password=Demo@123;"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"

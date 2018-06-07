@@ -56,10 +56,10 @@ namespace TodoApp
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseCors("AllowAllOrigins");
-            app.UseDefaultFiles();
             app.UseStaticFiles();
+            // app.UseDefaultFiles();
+            app.UseMvcWithDefaultRoute();
 
-            app.UseMvc();
         }
 
         public void ConfigureDevelopment(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
