@@ -4,18 +4,18 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
-    "@types/redux-logger": "^3.0.5",
-    "@types/redux-thunk": "^2.1.0",
-    "@types/reselect": "^2.2.0",
-    "antd": "^3.1.6",
-    "moment": "^2.20.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-redux": "^5.0.6",
+    "@types/redux-logger": "3.0.5",
+    "@types/redux-thunk": "2.1.0",
+    "@types/reselect": "2.2.0",
+    "antd": "3.1.6",
+    "moment": "2.20.1",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-redux": "5.0.6",
     "react-scripts-ts": "2.13.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0",
-    "reselect": "^3.0.1"
+    "redux-logger": "3.0.6",
+    "redux-thunk": "2.2.0",
+    "reselect": "3.0.1"
   },
   "scripts": {
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
@@ -24,14 +24,14 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
-    "@types/jest": "^22.1.1",
-    "@types/node": "^9.4.0",
-    "@types/react": "^16.0.36",
-    "@types/react-dom": "^16.0.3",
-    "@types/react-redux": "^5.0.14",
-    "react-app-rewired": "^1.4.1",
-    "ts-import-plugin": "^1.4.3",
-    "typescript": "^2.7.1"
+    "@types/jest": "22.1.1",
+    "@types/node": "9.4.0",
+    "@types/react": "16.0.36",
+    "@types/react-dom": "16.0.3",
+    "@types/react-redux": "5.0.14",
+    "react-app-rewired": "1.4.1",
+    "ts-import-plugin": "1.4.3",
+    "typescript": "2.7.1"
   },
   "theme": {
     "primary-color": "#1DA57A",
