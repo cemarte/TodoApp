@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-app
+  labels:
+    name: todo-app
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 5000
+    targetPort: 80
+  selector:
+    name: todo-app
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  todo-app-deploy
+  labels:
+    name:  todo-app
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  todo-app
+    spec:
+      imagePullSecrets:
+        - name: acr-secret
+      containers:
+      - image: hackfesttodocontainerregistry.azurecr.io/hackfest/todo-app:v3
+        name:  todo-app-cntnr
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "55M"
+        env:
+        - name:  SQLCONNSTR_TodoDb
+          value: "Server=todo-db;Database=todo;Port=5432;User Id=workshop;Password=Demo@123;"
+        ports:
+        - containerPort:  80
+          name:  todo-app
+        imagePullPolicy: Always
+      restartPolicy: Always
+      
