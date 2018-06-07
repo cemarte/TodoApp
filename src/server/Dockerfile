@@ -12,10 +12,11 @@ COPY Todo.App ./Todo.App/
 COPY Todo.Core ./Todo.Core/
 COPY Todo.Infrastructure ./Todo.Infrastructure/
 RUN dotnet publish ./Todo.App/ -c Release -o ../out
+RUN echo $(ls -1 /tmp/dir)
 
 # Build runtime image
 FROM microsoft/aspnetcore:2.0
 WORKDIR /app
 COPY --from=build-env /app/out .
-EXPOSE 5000
+EXPOSE 80
 ENTRYPOINT ["dotnet", "Todo.App.dll"]
