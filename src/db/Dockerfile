@@ -1,0 +1,5 @@
+FROM postgres:latest
+
+ENV POSTGRES_USER workshop
+ENV POSTGRES_PASSWORD Demo@123
+ENV POSTGRES_DB todo

@@ -1,6 +1,7 @@
 FROM microsoft/aspnetcore-build:2.0 AS build-env
 WORKDIR /app
 
+ENV ASPNETCORE_ENVIRONMENT Development
 # Copy csproj and restore as distinct layers
 COPY Todo.App/Todo.App.csproj ./Todo.App/
 COPY Todo.Core/*.csproj ./Todo.Core/
@@ -19,4 +20,5 @@ FROM microsoft/aspnetcore:2.0
 WORKDIR /app
 COPY --from=build-env /app/out .
 EXPOSE 80
+ENV ASPNETCORE_ENVIRONMENT Development
 ENTRYPOINT ["dotnet", "Todo.App.dll"]
