@@ -12,13 +12,13 @@ namespace TodoApp.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
         // [HttpGet]
-        // [Produces("text/html")]
+        [Produces("text/html")]
         public ActionResult Index()
         {
             string contentRootPath = _hostingEnvironment.WebRootPath;
 
-            // return System.IO.File.ReadAllText(System.IO.Path.Combine(contentRootPath,"index.html"));
-            return View();
+            return File("index.html","text/html");
+            //return View();
         }
     }
 }
