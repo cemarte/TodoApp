@@ -17,8 +17,8 @@ export const TodoList = ({ todos, onEdit, onDelete, toggleTodo }: ItodoListProps
             <List.Item
                 style={{ padding: '2em', textDecoration: todo.isDone ? 'line-through' : 'none' }}
                 actions={[
-                    <a key={1} onClick={() => { onEdit(todo); }}> <Icon type="edit" /> Edit</a>,
-                    <a key={2} onClick={() => { onDelete(todo); }}> <Icon type="delete" /> Delete</a>
+                    <a key={1} onClick={() => { onEdit(todo); }}> <Icon type="edit" /> Modify</a>,
+                    <a key={2} onClick={() => { onDelete(todo); }}> <Icon type="delete" /> Remove</a>
                 ]}
             >
                 <List.Item.Meta
