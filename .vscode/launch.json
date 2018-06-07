@@ -9,7 +9,7 @@
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build",
-        "program": "${workspaceRoot}/src/server/Todo.App/bin/Debug/netcoreapp2.0/<project-name.dll>",
+        "program": "${workspaceRoot}/src/server/Todo.App/bin/Debug/netcoreapp2.0/Todo.App.dll",
         "args": [],
         "cwd": "${workspaceRoot}",
         "stopAtEntry": false,
