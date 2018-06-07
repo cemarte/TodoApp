@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Protocols;
 using System;
 using Todo.Core.Entities;
 using Todo.Core.Interfaces;
@@ -23,9 +24,14 @@ namespace TodoApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //string connectionString = "Server=tcp:mj-hackfest-day2-server.database.windows.net,1433;Initial Catalog=mj-hackfest-day2-db;Persist Security Info=False;User ID=demouser;Password=Demo@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             services.AddDbContext<TodoDbContext>(
                 //options => options.UseInMemoryDatabase("todo")
-                options => options.UseSqlite("Data Source=todo.db")
+                //options => options.UseSqlite("Data Source=todo.db")
+                //options=> options.UseSqlServer(Configuration.GetConnectionString("TodoDb"))
+                options => options.UseNpgsql(Configuration.GetConnectionString("TodoDb"))
+                //options => options.UseNpgsql("Server=localhost;Database=todo;Port=5432;User Id=workshop;Password=Demo@123;")
+
                 );
 
             services.AddScoped<IRepository<TodoTask>, TodoRepository>();
