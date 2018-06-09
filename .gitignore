@@ -329,3 +329,4 @@ yarn-error.log*
 
 
 src/server/Todo.App/todo.db
+src/client/todo-react/build
