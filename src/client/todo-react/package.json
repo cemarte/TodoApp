@@ -2,7 +2,7 @@
   "name": "todo-react",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5001",
   "dependencies": {
     "@types/redux-logger": "3.0.5",
     "@types/redux-thunk": "2.1.0",
@@ -32,9 +32,5 @@
     "react-app-rewired": "1.4.1",
     "ts-import-plugin": "1.4.3",
     "typescript": "2.7.1"
-  },
-  "theme": {
-    "primary-color": "#1DA57A",
-    "font-size": "16px"
   }
 }

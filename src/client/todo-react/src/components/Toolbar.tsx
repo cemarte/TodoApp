@@ -3,35 +3,49 @@ import { FilterType, ItodoAppState } from '../types/index';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { filterChange } from '../actions/index';
-import { Row, Col } from 'antd';
-// const { Option } = Select;
+import './Toolbar.css';
+
 export interface ItoolbarProps { filterValue: FilterType; onFilterChange: (value: FilterType) => void; }
-import { Radio } from 'antd';
-const RadioGroup = Radio.Group;
-const radioStyle = {
-    display: 'block',
-    height: '30px',
-    lineHeight: '30px',
-    color: '#fff'
-};
+
 export const Toolbar = ({ filterValue, onFilterChange }: ItoolbarProps) => (
-    <Row>
-        <Col>
-            <p style={{ color: '#fff' }}>Filter list by status</p>
-            {/* <Select value={filterValue} style={{ width: 120 }} onChange={onFilterChange}>
-                <Option value="ALL">All</Option>
-                <Option value="DONE">Done</Option>
-                <Option value="TODO">To-Do</Option>
-            </Select> */}
-        </Col>
-        <Col>
-            <RadioGroup onChange={e => onFilterChange(e.target.value as FilterType)} value={filterValue}>
-                <Radio style={radioStyle} value="ALL">All    </Radio>
-                <Radio style={radioStyle} value="DONE">Done  </Radio>
-                <Radio style={radioStyle} value="TODO">To-Do </Radio>
-            </RadioGroup>
-        </Col>
-    </Row>
+    <div className="Toolbar">
+        <h3>Filter list by status</h3>
+        <div className="Toolbar-filters">
+            <label htmlFor="radio-1">
+                <input
+                    id="radio-1"
+                    name="radio-1"
+                    onChange={e => onFilterChange(e.target.value as FilterType)}
+                    checked={filterValue === 'ALL'}
+                    type="radio"
+                    radioGroup="filter"
+                    value="ALL"
+                />All
+            </label>
+            <label htmlFor="radio-2">
+                <input
+                    id="radio-2"
+                    name="radio-2"
+                    onChange={e => onFilterChange(e.target.value as FilterType)}
+                    checked={filterValue === 'DONE'}
+                    type="radio"
+                    radioGroup="filter"
+                    value="DONE"
+                />Done
+                </label>
+            <label htmlFor="radio-3">
+                <input
+                    id="radio-3"
+                    name="radio-3"
+                    onChange={e => onFilterChange(e.target.value as FilterType)}
+                    checked={filterValue === 'TODO'}
+                    type="radio"
+                    radioGroup="filter"
+                    value="TODO"
+                />To-Do
+                </label>
+        </div>
+    </div>
 );
 
 const mapStateToProps = (state: ItodoAppState) => {

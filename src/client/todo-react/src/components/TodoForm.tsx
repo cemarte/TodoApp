@@ -3,7 +3,7 @@ import { Itodo, ItodoAppState } from '../types/index';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { saveTodoInit, createTodo, editTodo, cancelEdit, updateTodoInit } from '../actions/index';
-import { Form, Button, Input, Icon, Card } from 'antd';
+import './TodoForm.css';
 
 export interface ItodoFormProps {
     todo?: Itodo;
@@ -18,30 +18,34 @@ export interface ItodoFormProps {
 export const TodoForm = ({ todo, isEdit, onAdd, onChange, onSave, onCancel }: ItodoFormProps) => {
     if (todo) {
         return (
-            <Card title={isEdit ? 'Update ToDo' : 'Add ToDo'}>
-                <Form layout="inline" onSubmit={(e) => { e.preventDefault(); onSave!(todo, isEdit); }}>
-                    <Form.Item>
-                        <Input
-                            type="text"
-                            name="todo-name"
-                            value={todo!.text}
-                            onChange={(e) => onChange!('text', e.target.value)}
-                        />
-                    </Form.Item>
-                    <Form.Item>
-                        <Button
-                            type="primary"
-                            onClick={() => onSave!(todo, isEdit)}
-                        >
-                            <Icon type="save" /> {isEdit ? 'Update ToDo' : 'Add ToDo'}
-                        </Button>
-                        <Button onClick={() => onCancel!(todo)}>Cancel</Button>
-                    </Form.Item>
-                </Form>
-            </Card>
+            <form
+                className="TodoForm"
+                title={isEdit ? 'Update ToDo' : 'Add ToDo'}
+                onSubmit={(e) => { e.preventDefault(); onSave!(todo, isEdit); }}
+            >
+                <div>
+                    <label htmlFor="todo-name">Text</label>
+                    <input
+                        type="text"
+                        id="todo-name"
+                        name="todo-name"
+                        value={todo!.text}
+                        onChange={(e) => onChange!('text', e.target.value)}
+                    />
+                </div>
+                <div>
+                    <button
+                        type="primary"
+                        onClick={() => onSave!(todo, isEdit)}
+                    >
+                        <i className="save" /> {isEdit ? 'Update ToDo' : 'Add ToDo'}
+                    </button>
+                    <button onClick={() => onCancel!(todo)}>Cancel</button>
+                </div>
+            </form>
         );
     } else {
-        return <Button onClick={onAdd}><Icon type="plus" /> Add</Button>;
+        return <button onClick={onAdd}><i className="plus" /> Add</button>;
     }
 };
 

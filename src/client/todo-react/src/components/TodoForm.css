@@ -1,0 +1,5 @@
+.TodoForm{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+}

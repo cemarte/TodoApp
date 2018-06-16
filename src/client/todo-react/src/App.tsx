@@ -2,27 +2,21 @@ import * as React from 'react';
 import './App.css';
 import FilteredTodos from './containers/FilteredTodos';
 import TodoForm from './components/TodoForm';
-import { Layout } from 'antd';
 import Toolbar from './components/Toolbar';
-const { Header, Sider, Content } = Layout;
 
 const App = () => (
-  <div className="App">
-    <Layout>
-      <Header>
+  <section className="App">
+      <header className="App-header">
         <h1 className="App-title">My Todo List</h1>
-      </Header>
-      <Layout>
-        <Sider>
+      </header>
+        <nav className="App-side">
           <Toolbar />
-        </Sider>
-        <Content>
+        </nav>
+        <main className="App-main">
           <TodoForm />
           <FilteredTodos />
-        </Content>
-      </Layout>
-    </Layout>
-  </div>
+        </main>
+  </section>
 );
 
 export default App;

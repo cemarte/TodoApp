@@ -1,5 +1,21 @@
-body {
+:root {
+  --blue: #19647E;
+  --aqua: #D5FFF3;
+  --white: #fff;
+  --gray: #2D2D2A;
+}
+
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  color: var(--gray);
+}
+
+#root {
+  height: 100%;
 }

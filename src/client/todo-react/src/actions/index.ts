@@ -32,7 +32,7 @@ export function toggleTodo(todo: Itodo): ItoggleTodo {
 export function toggleTodoUpdate(todo: Itodo) {
     return async (dispatch: Dispatch<{}>) => {
         await dispatch(updateTodoInit({ ...todo, isDone: !todo.isDone }));
-        dispatch(toggleTodo(todo));
+        return dispatch(toggleTodo(todo));
     };
 }
 export interface IfilterChange {

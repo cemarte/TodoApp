@@ -1,0 +1,11 @@
+.Toolbar {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-content: center;
+}
+.Toolbar-filters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

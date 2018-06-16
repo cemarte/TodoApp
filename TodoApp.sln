@@ -23,7 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{5D1145
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "todo-react", "todo-react", "{9C7B771D-CF3C-408D-A541-EED4AA6CFCA8}"
 	ProjectSection(SolutionItems) = preProject
-		src\client\todo-react\config-overrides.js = src\client\todo-react\config-overrides.js
 		src\client\todo-react\Dockerfile.dev = src\client\todo-react\Dockerfile.dev
 		src\client\todo-react\package-lock.json = src\client\todo-react\package-lock.json
 		src\client\todo-react\package.json = src\client\todo-react\package.json

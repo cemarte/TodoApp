@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { todoClicked, deleteTodoInit, toggleTodoUpdate, hideError } from '../actions/index';
 import { getFilteredTodos, isBusy } from '../selectors/index';
-import { Spin, message } from 'antd';
 import './FilteredTodos.css';
 export interface IfilteredTodosProps {
     todos?: Itodo[];
@@ -20,15 +19,11 @@ export interface IfilteredTodosProps {
 
 export class FilteredTodos extends React.Component<IfilteredTodosProps> {
     render(): JSX.Element {
-        if (this.props.error) {
-            message.error(this.props.error, 2, () => {
-                this.props.removeMessage!();
-            });
-        }
+
         if (this.props.isBusy) {
             return (
                 <div className="spin-container">
-                    <Spin />
+                    ...Loading
                 </div>
             );
         } else {
