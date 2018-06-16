@@ -8,7 +8,6 @@
     "@types/redux-thunk": "2.1.0",
     "@types/reselect": "2.2.0",
     "antd": "3.1.6",
-    "enzyme": "^3.3.0",
     "moment": "2.20.1",
     "react": "16.2.0",
     "react-dom": "16.2.0",
@@ -27,11 +26,14 @@
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.10",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/jest": "22.1.1",
     "@types/node": "9.4.0",
     "@types/react": "16.0.36",
     "@types/react-dom": "16.0.3",
     "@types/react-redux": "5.0.14",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "react-app-rewired": "1.4.1",
     "ts-import-plugin": "1.4.3",
     "typescript": "2.7.1"
