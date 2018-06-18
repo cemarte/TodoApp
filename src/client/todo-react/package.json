@@ -2,12 +2,11 @@
   "name": "todo-react",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5001",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@types/redux-logger": "3.0.5",
     "@types/redux-thunk": "2.1.0",
     "@types/reselect": "2.2.0",
-    "antd": "3.1.6",
     "moment": "2.20.1",
     "react": "16.2.0",
     "react-dom": "16.2.0",
@@ -22,7 +21,11 @@
     "start": "react-app-rewired start --scripts-version react-scripts-ts",
     "build": "react-app-rewired build --scripts-version react-scripts-ts",
     "test": "react-app-rewired test --env=jsdom --scripts-version react-scripts-ts",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "selenium-setup": "./node_modules/.bin/selenium-standalone install",
+    "selenium-start": "selenium-standalone start",
+    "e2e-tests": "wdio wdio.conf.js",
+    "e2e-tests-watch": "wdio wdio.conf.js --watch"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.10",
@@ -32,10 +35,15 @@
     "@types/react": "16.0.36",
     "@types/react-dom": "16.0.3",
     "@types/react-redux": "5.0.14",
+    "chai": "^4.1.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "react-app-rewired": "1.4.1",
+    "selenium-standalone": "^6.15.0",
     "ts-import-plugin": "1.4.3",
-    "typescript": "2.7.1"
+    "typescript": "2.7.1",
+    "wdio": "^2.0.2",
+    "wdio-mocha-framework": "^0.5.13",
+    "webdriverio": "^4.12.0"
   }
 }
