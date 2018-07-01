@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.App", "src\server\Todo.App\Todo.App.csproj", "{5D23C963-7360-4BB2-932E-44B0662FF30C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.App", "src\server\netcore\Todo.App\Todo.App.csproj", "{5D23C963-7360-4BB2-932E-44B0662FF30C}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{56931B46-E2C1-464D-B570-CECF4FFB4144}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E4A797DA-4B57-4958-BD64-3371E9AE4305}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Core", "src\server\Todo.Core\Todo.Core.csproj", "{7A3BD6AB-82CE-4FCB-A7B9-858E7355347E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Core", "src\server\netcore\Todo.Core\Todo.Core.csproj", "{7A3BD6AB-82CE-4FCB-A7B9-858E7355347E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Infrastructure", "src\server\Todo.Infrastructure\Todo.Infrastructure.csproj", "{28B38EEB-7D94-460C-923C-7A4E0999C89A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Infrastructure", "src\server\netcore\Todo.Infrastructure\Todo.Infrastructure.csproj", "{28B38EEB-7D94-460C-923C-7A4E0999C89A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9945F76D-A0C1-4484-A79A-B009F8EC8033}"
 EndProject
